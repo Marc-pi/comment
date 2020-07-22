@@ -455,7 +455,8 @@ class Api extends AbstractApi
         }
         
         $result['globalRatings'] = $globalRatings;
-        
+        $result['rootitem'] = Pi::api('comment', $result['root']['module'])->getItem($result['root']['item']);
+
         return $result;
     }
 
